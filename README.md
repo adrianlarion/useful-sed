@@ -1,6 +1,6 @@
 # Useful sed
 
-#### You can help me make more useful stuff
+#### This is awkward but ...
 * I love teaching others. Time is limited but donations will allow me to to help the community more. How useful was this to you? If it was I would be humbly grateful for your donation. 
 * [paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) or [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) are some ways to help me so I can help you better. Thank you! May you be rich as Crassus and happy as Buddha! :) 
 
