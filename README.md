@@ -19,6 +19,9 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 6. **Regex and line ranges** `sed -E '/DEBUG/,30d' file.txt ` - delete from line matching DEBUG to line 30
 7. **all lines** `sed 'a\AFTER EVERY LINE' file.txt ` - append this after every line (when no address is present apply to all lines)
 8. **Nested** - use this with a sed script (see below)
+
+<br>
+
 ```
 #!/usr/bin/sed -f
 1,100 { 
@@ -28,13 +31,21 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 	}
 }
 ```
+
+<br>
+
 - between lines 1 and 100:
 >> where matches DEBUG, 
 >>> delete lines containing /DONE/ and after lines containing /NOT DONE/ append.
 
+<br>
+
 #### You can invert the address by putting a ! in front of **the command**, not the address. 
 1. `sed '/PRODUCTION/!d' file.txt ` - delete all lines not containing regex match. Note the ! in front of d.
 2. Everything inside curly brace (for nested) is a command. You put the ! in front of the curly brace.
+
+<br>
+
 ```
 #!/usr/bin/sed -f
 1,100 { 
@@ -44,10 +55,19 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 	}
 }
 ```
+
+<br>
+
 * between lines 1,100
 >> on lines NOT containing /DEBUG/
 >>> Perform operations
+
+<br>
+
 3. "Double" nested inversion
+
+<br>
+
 ```
 #!/usr/bin/sed -f
 1,100 { 
@@ -56,9 +76,15 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 	}
 }
 ```
+
+<br>
+
 * between lines 1,100
 >> on lines not containing DEBUG
 >>> delete lines NOT containing /DONE/
+
+<br>
+
 
 #### Basic commands:
 1. `5d` - **delete** - Delete line 5.
@@ -70,12 +96,20 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 7. `5r newfile.txt` - **read** - put the contents of file 'newfile.txt' after line 5
 8. `5w written.txt` - **write** - write line 5 to 'written.txt'
 9. `5s/foo/bar` - **substitute** - on line 5 search for foo and replace with bar
+
+<br>
+
 #### Advanced & Less used commands
 1. `sed -E '/^#/G G' file.txt ` - **append newline to pattern space then append hold space to pattern space** - insert two blank lines after every line that matches regex
+
+<br>
+
 #### Regex tricks
 1. `&` is the matched regex. `sed -E '/foo/& & &/' file.txt` will triplicate the foo word
 2. `\1` to `\9` are the groups id's. You use a group like `sed -E 's/(foo) (bar)/\2 \1' file.txt '. In this very simple example we search for 'foo' followed by space followed by 'bar'. Then we switch these words (instead of 'foo bar' we have 'bar foo')
 3. Flags. `sed 's/foo/bar/gi' file.txt `. 'g' will replace all occurrences on the line (instead of just the first as it is by default). 'i' will make the substitute case insensitive.
+
+<br>
 
 [TO BE CONTINUED]
 
