@@ -1,5 +1,12 @@
 # Useful sed
 
+#### You can help me make more useful stuff
+* I love teaching others. Time is limited but donations will allow me to to help the community more. How useful was this to you? If it was I would be humbly grateful for your donation. 
+* paypal.me/adrianscheff or patreon.com/adrianscheff are some ways to help me so I can help you better. Thank you! May you be rich as Crassus and happy as Buddha! :) 
+
+
+
+
 
 #### NOTES
 * This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. I'm not a sed guru after all, just someone trying to follow the 20/80 formula (even though sometimes I go waaay overboard). 
