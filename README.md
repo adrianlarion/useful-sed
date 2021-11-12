@@ -117,19 +117,25 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 
 
 # ONE LINERS WITH SHORT EXPLANATION 
-#### print one line
+#### Print one line
 `sed -n '10p' myfile.txt` 
 
-#### do replacement on all lines except line 5
+#### Do replacement on all lines except line 5
 `sed '5!/s/foo/bar/' file.txt`
 
-#### do replacement on lines matching regex (eg: lines starting with 'hello')
+#### Do replacement on lines matching regex (eg: lines starting with 'hello')
 `sed '/^hello/ s/h/H/' file.txt ` 
 
 
 
-#### do replacement from line 5 to end of file
+#### Do replacement from line 5 to end of file
 `sed '5,$ s/foo/bar/' file.txt `
+
+
+#### Delete empty files
+`sed  '/^$/d' file`
+
+
 
 #### Print lines between two regex matches
 `sed -nE '/^foo/,/^bar/p' file.txt`
@@ -144,24 +150,24 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 #### Insert a space between lowercase/Uppercase characters using & (which represents the regex match)
 `sed 's/[a-zA-Z]/& /g' file.txt `
 
-#### keep the first word of every line (where word is defined by alphanumeric chars + underscores for simplicity sake)
+#### Keep the first word of every line (where word is defined by alphanumeric chars + underscores for simplicity sake)
 `sed -E 's_[a-zA-Z0-9_]+.*_\1_' file.txt `
 
 
-#### switch the first two words 
+#### Switch the first two words 
 `sed -E 's_([a-zA-Z0-9_]*) ([a-zA-Z0-9_]*)_\2 \1_' f1`
 
 
-#### remove duplicate words separated by a single space (but not triplicate)
+#### Remove duplicate words separated by a single space (but not triplicate)
 `sed -E 's_([a-zA-Z0-9_]+) \1_\1_ig' f1`
 
-#### search and replace for pattern, write just the lines with the replacements in a new file
+#### Search and replace for pattern, write just the lines with the replacements in a new file
 `sed  's_foo_bar_w replaced.txt' file.txt  `
 
-#### multiple replacements
+#### Multiple replacements
 `sed -e 's_foo_bar_' -e 's_hello_HELLO_' file.txt `
 
-#### multiple replacements by using a sed script
+#### Multiple replacements by using a sed script
 ```
 #!/usr/bin/sed -f
 s/a/A/
@@ -175,7 +181,7 @@ s/hello/HELLO/
 `sed '10p;5i\"INSERTED BEFORE LINE 5" file.txt ` 
 
 
-#### remove comments between lines starting with these two keywords. Empty lines will be put there instead
+#### Remove comments between lines starting with these two keywords. Empty lines will be put there instead
 `sed -E '/start/,/end/ s/#.*//' file.txt `
 
 #### Delete comments starting with # (no empty lines left behind)
@@ -185,16 +191,16 @@ s/hello/HELLO/
 `sed '/^#/G' file.txt `
 
 
-#### view lines minus lines between line starting with pattern and end of file 
+#### View lines minus lines between line starting with pattern and end of file 
 `sed  '/start/,$ d' file.txt `
 
-#### view lines except lines between line starting with pattern and line ending with pattern
+#### View lines except lines between line starting with pattern and line ending with pattern
 `sed -rn '/start/,/end/ !p' file.txt `
 
-#### print until you encounter pattern then quit
+#### Print until you encounter pattern then quit
 `sed  '/start/q' file.txt `
 
-#### insert contents of file after a certain line
+#### Insert contents of file after a certain line
 `sed  '5 r newfile.txt' file.txt `
 
 #### Append text after lines containing regex (AFTER FOO)
@@ -203,7 +209,7 @@ s/hello/HELLO/
 #### Insert text after lines containing regex (BEFORE FOO)
 `sed '/foo/i\BEFORE FOO' file.txt `
 
-#### change line containing regex match
+#### Change line containing regex match
 `sed '/foo/c\FOO IS CHANGED' file.txt `
 
 #### Nested sed ranges with inversion. Between lines 1,100 apply actions where the pattern DOESN'T match.
