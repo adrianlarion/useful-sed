@@ -64,18 +64,23 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 
 #### multiple replacements by using a bash script
 ```
-#!/bin/bash
-sed '
+#!/usr/bin/sed -f
 s/a/A/
 s/foo/BAR/
 s/hello/HELLO/
-' <$1
 ```
-* call with  `./myscript.sh myfile.txt`
+* Make executable with `chmod +x myscript.sed`, call with `./myscript.sed myfile.txt`
 
 
-#### remove comments between lines starting with these two keywords
+#### Multiple commands using the ; operator which in theory concatenates commands (WARNING! It won't work as expected with certain commands such as 'r' or 'w'. Use a sed script instead OR put the command dealing with filenames last). Print line 10 and insert before line 5. 
+`sed '10p;5i\"INSERTED BEFORE LINE 5" file.txt ` 
+
+
+#### remove comments between lines starting with these two keywords. Empty lines will be put there instead
 `sed -E '/start/,/end/ s/#.*//' file.txt `
+
+#### Delete comments starting with # (no empty lines left behind)
+sed -E '/^#/d' f1
 
 #### view lines minus lines between line starting with pattern and end of file 
 `sed  '/start/,$ d' file.txt `
@@ -90,32 +95,30 @@ s/hello/HELLO/
 `sed  '5 r newfile.txt' file.txt `
 
 #### Append text after lines containing regex (AFTER FOO)
-`sed '/foo/a\ AFTER FOO' file.txt `
+`sed '/foo/a\AFTER FOO' file.txt `
 
 #### Insert text after lines containing regex (BEFORE FOO)
-`sed '/foo/i\ BEFORE FOO' file.txt `
+`sed '/foo/i\BEFORE FOO' file.txt `
 
 #### change line containing regex match
-`sed '/foo/c\ FOO IS CHANGED' file.txt `
+`sed '/foo/c\FOO IS CHANGED' file.txt `
 
 #### Nested sed ranges with inversion. Between lines 1,100 apply actions where the pattern DOESN'T match.
 ```
-#!/bin/bash
-sed  '
+#!/usr/bin/sed -f
 1,100 {
 	/foo/ !{
-		s_hello_HELLO_
-		s_yes_YES
+		s_hello_HELLOOOOWORLD_
+		s_yes_YES_
 	}
-}'
+}
+
 ```
-* call with `./script.sh <file.txt `
 
 
 #### Use nested addresses with change, insert and append to modify: the line before match, the line with match, the line after match.
 ```
-#!/bin/bash
-sed '
+#!/usr/bin/sed -f
 /^#/ {
 i\
 #BEFFORE ORIGINAL COMMENt
@@ -123,20 +126,18 @@ a\
 #AFTER ORIGINAL COMMENT
 c\
 # ORIGINAL COMMENT IS NOW THIS LINE
-}'
+}
 
 ```
 
 #### Insert new line before the first comment, after the first comment put in the contents of file and quit immediately afterwards
 ```
-
-#!/bin/bash
-sed '
+#!/usr/bin/sed -f
 /^#/ {
-i #BEFORE COMMENT
+i\#BEFORE COMMENT
 r myotherfile.txt
 q
-}'
+}
 ```
 
 #### Transform text 
