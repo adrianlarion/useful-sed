@@ -7,11 +7,11 @@ This was born in 4-5 hours of recapping sed (and many hours learning it in the f
 It was Number 1 on Hacker News in hours after publication and 300+ stars on Github. Hours. Damn! All other projects combined (some of which took much more time) are in the double digit range. The low range. And this quick and  dirty sed tips collection took of. I consider myself lucky to have experienced this and I'm grateful to the people who made it possible. For you I'll try and make this as good as I can. 
 
 
-[ONE LINERS WITH SHORT EXPLANATION](#one-liners-with-short-explanation):bulb:
+[ONE LINERS WITH SHORT EXPLANATION](#one-liners-with-short-explanation) :bulb:
 
-[SHORT SED TUT](#short-sed-tut):books:
+[SHORT SED TUT](#short-sed-tut) :books:
 
-[DONATE IF YOU FEEL LIKE](this-is-awkward-but):pray:
+[DONATE IF YOU FEEL LIKE](this-is-awkward-but) :pray:
 
 [CREDITS](credits-&-links)
 
