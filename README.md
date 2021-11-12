@@ -37,7 +37,7 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 `sed '5,$ s/foo/bar/' file.txt `
 
 
-#### Delete empty files
+#### Delete empty lines
 `sed  '/^$/d' file`
 
 
