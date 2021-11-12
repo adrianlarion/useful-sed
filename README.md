@@ -48,7 +48,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 >> on lines NOT containing /DEBUG/
 >>> Perform operations
 3. "Double" nested inversion
-``
+```
 #!/usr/bin/sed -f
 1,100 { 
 	/DEBUG/ !{
