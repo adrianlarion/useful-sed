@@ -20,7 +20,7 @@
 `sed -nr '/^foo/,/^bar/p' file.txt`
 
 #### Use custom delimiters to make it easy for some strings that contain slashes
-`sed 's_/bin/bash_/bin/sh' file.txt ` 
+`sed 's_/bin/bash_/bin/sh_' file.txt ` 
 
 #### Insert a space between lowercase/Uppercase characters using & (which represents the regex match)
 `sed 's/[a-zA-Z]/& /g' file.txt `
