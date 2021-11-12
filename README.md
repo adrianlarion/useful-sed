@@ -1,119 +1,24 @@
 # Useful sed
 
-#### This is awkward but ...
-* I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation.:pray:
-* [paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) |  [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) | bitcoin (1NrkpsgbmmLDoDcvAvsGEMGEQhvvtw36x1) - **are some ways to help me help you better.**
-Thank you! May you be rich as Crassus and happy as Buddha! :) 
+
+This was born in 4-5 hours of recapping sed (and many hours learning it in the first place). Since then I've spent some more hours (and counting) fixing & improving. A good way to learn something well is to also explain to others. And if I'm honest this is also for myself, later, when I forget. :) 
+
+
+It was Number 1 on Hacker News in hours after publication and 300+ stars on Github. Hours. Damn! All other projects combined (some of which took much more time) are in the double digit range. The low range. And this quick and  dirty sed tips collection took of. I consider myself lucky to have experienced this and I'm grateful to the people who made it possible. For you I'll try and make this as good as I can. 
+
+
+[ONE LINERS WITH SHORT EXPLANATION](#one-liners-with-short-explanation):bulb:
+
+[SHORT SED TUT](#short-sed-tut):books:
+
+[DONATE IF YOU FEEL LIKE](this-is-awkward-but):pray:
+
+[CREDITS](credits-&-links)
 
 
 
 -----
 
-# Short Sed Tut (One liners below :arrow_down: )
-#### Sed commands use an address based on which they operate. The address can be:
-1. **Single lines** `sed '10d' file.txt ` - delete line 10
-2. **Line range** `sed '1,10d' file.txt` - delete from line 1 to 10
-3. **Line range2**  `sed '6,$d' file.txt ` - delete from line 6 to end of file ($ is end of file)
-4. **Regex** `sed -E '/^#/d' file.txt ` - delete lines where regex matches
-5. **Regex ranges** `sed -E '/DEBUG/,/END_DEBUG/d' file.txt ` - delete lines between regex matches (including lines where regex matches)
-6. **Regex and line ranges** `sed -E '/DEBUG/,30d' file.txt ` - delete from line matching DEBUG to line 30
-7. **all lines** `sed 'a\AFTER EVERY LINE' file.txt ` - append this after every line (when no address is present apply to all lines)
-8. **Nested** - use this with a sed script (see below)
-
-<br>
-
-```
-#!/usr/bin/sed -f
-1,100 { 
-	/DEBUG/{
-		/DONE/d
-		/NOT DONE/a\TO BE DONE URGENTLY 
-	}
-}
-```
-
-<br>
-
-- between lines 1 and 100:
->> where matches DEBUG, 
->>> delete lines containing /DONE/ and after lines containing /NOT DONE/ append.
-
-<br>
-
-#### You can invert the address by putting a ! in front of **the command**, not the address. 
-1. `sed '/PRODUCTION/!d' file.txt ` - delete all lines not containing regex match. Note the ! in front of d.
-2. Everything inside curly brace (for nested) is a command. You put the ! in front of the curly brace.
-
-<br>
-
-```
-#!/usr/bin/sed -f
-1,100 { 
-	/DEBUG/ !{
-		/DONE/d
-		/NOT DONE/a\TO BE DONE URGENTLY 
-	}
-}
-```
-
-<br>
-
-* between lines 1,100
->> on lines NOT containing /DEBUG/
->>> Perform operations
-
-<br>
-
-3. "Double" nested inversion
-
-<br>
-
-```
-#!/usr/bin/sed -f
-1,100 { 
-	/DEBUG/ !{
-		/DONE/!d
-	}
-}
-```
-
-<br>
-
-* between lines 1,100
->> on lines not containing DEBUG
->>> delete lines NOT containing /DONE/
-
-<br>
-
-
-#### Basic commands:
-1. `5d` - **delete** - Delete line 5.
-2. `5p` - **print.** - print line 5 (you should call sed with `-n` option when using print to only print the specified lines)
-3. `5q` - **quit**  - after line 5 quit
-4. `5a\Appended` - **append** - after line 5. Note the backward slash in front of 'a'
-5. `5c\Changed` - **change** - change line 5 to 'Changed'
-6. `5i\Before` - **insert** - insert before line 5.
-7. `5r newfile.txt` - **read** - put the contents of file 'newfile.txt' after line 5
-8. `5w written.txt` - **write** - write line 5 to 'written.txt'
-9. `5s/foo/bar` - **substitute** - on line 5 search for foo and replace with bar
-
-<br>
-
-#### Advanced & Less used commands
-1. `sed -E '/^#/G G' file.txt ` - **append newline to pattern space then append hold space to pattern space** - insert two blank lines after every line that matches regex
-
-<br>
-
-#### Regex tricks
-1. `&` is the matched regex. `sed -E '/foo/& & &/' file.txt` will triplicate the foo word
-2. `\1` to `\9` are the groups id's. You use a group like `sed -E 's/(foo) (bar)/\2 \1' file.txt '. In this very simple example we search for 'foo' followed by space followed by 'bar'. Then we switch these words (instead of 'foo bar' we have 'bar foo')
-3. Flags. `sed 's/foo/bar/gi' file.txt `. 'g' will replace all occurrences on the line (instead of just the first as it is by default). 'i' will make the substitute case insensitive.
-
-<br>
-
-[TO BE CONTINUED]
-
-------
 
 
 # ONE LINERS WITH SHORT EXPLANATION 
@@ -264,6 +169,122 @@ q
 
 #### Append two extra lines after regex match
  `sed -E '/^#/G G' file.txt ` 
+
+-----
+
+# Short Sed Tut 
+#### Sed commands use an address based on which they operate. The address can be:
+1. **Single lines** `sed '10d' file.txt ` - delete line 10
+2. **Line range** `sed '1,10d' file.txt` - delete from line 1 to 10
+3. **Line range2**  `sed '6,$d' file.txt ` - delete from line 6 to end of file ($ is end of file)
+4. **Regex** `sed -E '/^#/d' file.txt ` - delete lines where regex matches
+5. **Regex ranges** `sed -E '/DEBUG/,/END_DEBUG/d' file.txt ` - delete lines between regex matches (including lines where regex matches)
+6. **Regex and line ranges** `sed -E '/DEBUG/,30d' file.txt ` - delete from line matching DEBUG to line 30
+7. **all lines** `sed 'a\AFTER EVERY LINE' file.txt ` - append this after every line (when no address is present apply to all lines)
+8. **Nested** - use this with a sed script (see below)
+
+<br>
+
+```
+#!/usr/bin/sed -f
+1,100 { 
+	/DEBUG/{
+		/DONE/d
+		/NOT DONE/a\TO BE DONE URGENTLY 
+	}
+}
+```
+
+<br>
+
+- between lines 1 and 100:
+>> where matches DEBUG, 
+>>> delete lines containing /DONE/ and after lines containing /NOT DONE/ append.
+
+<br>
+
+#### You can invert the address by putting a ! in front of **the command**, not the address. 
+1. `sed '/PRODUCTION/!d' file.txt ` - delete all lines not containing regex match. Note the ! in front of d.
+2. Everything inside curly brace (for nested) is a command. You put the ! in front of the curly brace.
+
+<br>
+
+```
+#!/usr/bin/sed -f
+1,100 { 
+	/DEBUG/ !{
+		/DONE/d
+		/NOT DONE/a\TO BE DONE URGENTLY 
+	}
+}
+```
+
+<br>
+
+* between lines 1,100
+>> on lines NOT containing /DEBUG/
+>>> Perform operations
+
+<br>
+
+3. "Double" nested inversion
+
+<br>
+
+```
+#!/usr/bin/sed -f
+1,100 { 
+	/DEBUG/ !{
+		/DONE/!d
+	}
+}
+```
+
+<br>
+
+* between lines 1,100
+>> on lines not containing DEBUG
+>>> delete lines NOT containing /DONE/
+
+<br>
+
+
+#### Basic commands:
+1. `5d` - **delete** - Delete line 5.
+2. `5p` - **print.** - print line 5 (you should call sed with `-n` option when using print to only print the specified lines)
+3. `5q` - **quit**  - after line 5 quit
+4. `5a\Appended` - **append** - after line 5. Note the backward slash in front of 'a'
+5. `5c\Changed` - **change** - change line 5 to 'Changed'
+6. `5i\Before` - **insert** - insert before line 5.
+7. `5r newfile.txt` - **read** - put the contents of file 'newfile.txt' after line 5
+8. `5w written.txt` - **write** - write line 5 to 'written.txt'
+9. `5s/foo/bar` - **substitute** - on line 5 search for foo and replace with bar
+
+<br>
+
+#### Advanced & Less used commands
+1. `sed -E '/^#/G G' file.txt ` - **append newline to pattern space then append hold space to pattern space** - insert two blank lines after every line that matches regex
+
+<br>
+
+#### Regex tricks
+1. `&` is the matched regex. `sed -E '/foo/& & &/' file.txt` will triplicate the foo word
+2. `\1` to `\9` are the groups id's. You use a group like `sed -E 's/(foo) (bar)/\2 \1' file.txt '. In this very simple example we search for 'foo' followed by space followed by 'bar'. Then we switch these words (instead of 'foo bar' we have 'bar foo')
+3. Flags. `sed 's/foo/bar/gi' file.txt `. 'g' will replace all occurrences on the line (instead of just the first as it is by default). 'i' will make the substitute case insensitive.
+
+<br>
+
+[TO BE CONTINUED]
+
+------
+
+#### This is awkward but ...
+* I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation.:pray:
+* [paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) |  [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) | bitcoin (1NrkpsgbmmLDoDcvAvsGEMGEQhvvtw36x1) - **are some ways to help me help you better.**
+Thank you! May you be rich as Crassus and happy as Buddha! :) 
+
+
+
 
 ------
 #### Credits & links
