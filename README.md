@@ -1,5 +1,5 @@
 # Useful sed
-/
+
 
 #### NOTES
 * This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. 
