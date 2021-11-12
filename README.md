@@ -1,4 +1,8 @@
 # Useful sed scripts
+* This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. 
+* There is no mention of the hold space (and other registers) usage. Personally I found their usage quite confusing. If this might change in the future I'll adjust this. After all, this is not "The ultimate sed reference" but "useful sed".
+* There might be examples where I use -E (regexp extended option) when it is not necesarilly needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necesarry (as it hides some verbosity which makes the commands clearer).
+
 
 
 
@@ -20,24 +24,24 @@
 `sed -nr '/^foo/,/^bar/p' file.txt`
 
 #### Use custom delimiters to make it easy for some strings that contain slashes
-`sed 's_/bin/bash_/bin/sh' file.txt ` 
+`sed 's_/bin/bash_/bin/sh_' file.txt ` 
 
 #### Insert a space between lowercase/Uppercase characters using & (which represents the regex match)
 `sed 's/[a-zA-Z]/& /g' file.txt `
 
-#### keep the first word of every line
-`sed -r s_[a-z]+.*_\1_' file.txt `
+#### keep the first word of every line (where word is defined by alnum chars + underscores for simplicity sake)
+`sed -E s_[a-zA-Z0-9_]+.*_\1_' file.txt `
 
 
 #### switch the first two words 
-`sed -r 's_([a-zA-Z]*) ([a-zA-Z]*)_\2 \1_' f1`
+`sed -E 's_([a-zA-Z0-9_]*) ([a-zA-Z0-9_]*)_\2 \1_' f1`
 
 
-#### remove duplicate words (but not triplicate)
-`sed -r 's_([a-z]+) \1_\1_ig' f1`
+#### remove duplicate words separated by a single space (but not triplicate)
+`sed -E 's_([a-zA-Z0-9_]+) \1_\1_ig' f1`
 
 #### search and replace for pattern, write just the lines with the replacements in a new file
-`sed -r 's_foo_bar_w replaced.txt' file.txt  `
+`sed  's_foo_bar_w replaced.txt' file.txt  `
 
 #### multiple replacements
 `sed -e 's_foo_bar_' -e 's_hello_HELLO_' file.txt `
@@ -55,28 +59,28 @@ s/hello/HELLO/
 
 
 #### remove comments between lines starting with these two keywords
-`sed -r '/start/,/end/ s/#.*//' file.txt `
+`sed -E '/start/,/end/ s/#.*//' file.txt `
 
 #### view lines minus lines between line starting with pattern and end of file 
-`sed -r '/start/,$ d' file.txt `
+`sed  '/start/,$ d' file.txt `
 
 #### view lines except lines between line starting with pattern and line ending with pattern
 `sed -rn '/start/,/end/ !p' file.txt `
 
 #### print until you encounter pattern then quit
-`sed -r '/start/q' file.txt `
+`sed  '/start/q' file.txt `
 
 #### insert contents of file after a certain line
-`sed -r '5 r newfile.txt' file.txt `
+`sed  '5 r newfile.txt' file.txt `
 
 #### Append text after lines containing regex (AFTER FOO)
-`sed '/foo/ a AFTER FOO' file.txt `
+`sed '/foo/a\ AFTER FOO' file.txt `
 
 #### Insert text after lines containing regex (BEFORE FOO)
-`sed '/foo/ i BEFORE FOO' file.txt `
+`sed '/foo/i\ BEFORE FOO' file.txt `
 
 #### change line containing regex match
-`sed '/foo/c FOO IS CHANGED' file.txt `
+`sed '/foo/c\ FOO IS CHANGED' file.txt `
 
 #### Nested sed ranges with inversion. Between lines 1,100 apply actions where the pattern DOESN'T match.
 ```
@@ -124,7 +128,7 @@ q
 
 
 #### Copy all the comments (starting with #) to a new file
-`sed -r '/^#/w comments.txt' file.txt `
+`sed -E '/^#/w comments.txt' file.txt `
 
 #### Print every second line (substitute ~3 for third line, etc)
 `sed '1~2p' file.txt `
