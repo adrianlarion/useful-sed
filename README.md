@@ -14,7 +14,7 @@
 
 
 #### do replacement from line 5 to end of file
-`s '1,$ s/foo/bar/' file.txt `
+`s '5,$ s/foo/bar/' file.txt `
 
 #### Print lines between two regexes
 `sed -nr '/^foo/,/^bar/p' file.txt`
