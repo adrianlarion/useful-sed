@@ -11,9 +11,9 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 
 [SHORT SED TUT](#short-sed-tut) :books:
 
-[DONATE IF YOU FEEL LIKE](this-is-awkward-but) :pray:
+[DONATE IF YOU FEEL LIKE](#this-is-awkward-but) :pray:
 
-[CREDITS](credits-&-links)
+[CREDITS](#credits-and-links)
 
 
 
@@ -287,7 +287,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 
 
 ------
-#### Credits & links
+#### Credits and links
 * I've learned sed from the manual and various internet links. Here are some of them:<br>
 http://sed.sourceforge.net/sed1line.txt<br>
 https://www.grymoire.com/Unix/Sed.html<br>
