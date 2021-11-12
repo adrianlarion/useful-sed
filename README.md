@@ -33,7 +33,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 `sed '5,$ s/foo/bar/' file.txt `
 
 #### Print lines between two regexes
-`sed -nr '/^foo/,/^bar/p' file.txt`
+`sed -nE '/^foo/,/^bar/p' file.txt`
 
 #### Use custom delimiters to make it easy for some strings that contain slashes
 `sed 's_/bin/bash_/bin/sh_' file.txt ` 
@@ -152,5 +152,3 @@ q
 #### Edit file in place but also create a backup
 `sed -i.bak 's/hello/HELLO/' file.txt `
 
-
-####
