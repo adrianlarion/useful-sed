@@ -62,7 +62,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 #### multiple replacements
 `sed -e 's_foo_bar_' -e 's_hello_HELLO_' file.txt `
 
-#### multiple replacements by using a bash script
+#### multiple replacements by using a sed script
 ```
 #!/usr/bin/sed -f
 s/a/A/
