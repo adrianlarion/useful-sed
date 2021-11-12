@@ -11,7 +11,6 @@
 ###### do replacement on lines matching regex (eg: lines starting with 'hello')
 `sed '/^hello/ s/h/H/' file.txt ` 
 
-###### do replacement from first l
 
 
 ###### do replacement from line 5 to end of file
