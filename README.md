@@ -30,6 +30,10 @@
 #### Use custom delimiters to make it easy for some strings that contain slashes
 `sed 's_/bin/bash_/bin/sh_' file.txt ` 
 
+#### Custom delimiters for regex adress combined with the classical delimiter for substitute command (you could also use there a custom delimiter). Useful for paths.
+`sed '\_/bin/bash_s/grep/egrep/' file.txt`
+* or using the same delimiter for clarity `sed '\_/bin/bash_s_grep_egrep_' file.txt`
+
 #### Insert a space between lowercase/Uppercase characters using & (which represents the regex match)
 `sed 's/[a-zA-Z]/& /g' file.txt `
 
@@ -140,3 +144,5 @@ q
 #### Edit file in place but also create a backup
 `sed -i.bak 's/hello/HELLO/' file.txt `
 
+
+####
