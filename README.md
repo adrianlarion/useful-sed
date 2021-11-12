@@ -10,7 +10,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 -----
 
 # Short Sed Tut (One liners below :arrow_down: )
-#### Sed commands use an adress based on which they operate. The adress can be:
+#### Sed commands use an address based on which they operate. The address can be:
 1. **Single lines** `sed '10d' file.txt ` - delete line 10
 2. **Line range** `sed '1,10d' file.txt` - delete from line 1 to 10
 3. **Line range2**  `sed '6,$d' file.txt ` - delete from line 6 to end of file ($ is end of file)
@@ -48,7 +48,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 >> on lines NOT containing /DEBUG/
 >>> Perform operations
 3. "Double" nested inversion
-```
+``
 #!/usr/bin/sed -f
 1,100 { 
 	/DEBUG/ !{
@@ -75,7 +75,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 #### Regex tricks
 1. `&` is the matched regex. `sed -E '/foo/& & &/' file.txt` will triplicate the foo word
 2. `\1` to `\9` are the groups id's. You use a group like `sed -E 's/(foo) (bar)/\2 \1' file.txt '. In this very simple example we search for 'foo' followed by space followed by 'bar'. Then we switch these words (instead of 'foo bar' we have 'bar foo')
-3. Flags. `sed 's/foo/bar/gi' file.txt `. 'g' will replace all occurences on the line (instead of just the first as it is by defaut). 'i' will make the substitute case insensitive.
+3. Flags. `sed 's/foo/bar/gi' file.txt `. 'g' will replace all occurrences on the line (instead of just the first as it is by default). 'i' will make the substitute case insensitive.
 
 [TO BE CONTINUED]
 
@@ -97,20 +97,20 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 #### do replacement from line 5 to end of file
 `sed '5,$ s/foo/bar/' file.txt `
 
-#### Print lines between two regexes
+#### Print lines between two regex matches
 `sed -nE '/^foo/,/^bar/p' file.txt`
 
 #### Use custom delimiters to make it easy for some strings that contain slashes
 `sed 's_/bin/bash_/bin/sh_' file.txt ` 
 
-#### Custom delimiters for regex adress combined with the classical delimiter for substitute command (you could also use there a custom delimiter). Useful for paths.
+#### Custom delimiters for regex address combined with the classical delimiter for substitute command (you could also use there a custom delimiter). Useful for paths.
 `sed '\_/bin/bash_s/grep/egrep/' file.txt`
 * or using the same delimiter for clarity `sed '\_/bin/bash_s_grep_egrep_' file.txt`
 
 #### Insert a space between lowercase/Uppercase characters using & (which represents the regex match)
 `sed 's/[a-zA-Z]/& /g' file.txt `
 
-#### keep the first word of every line (where word is defined by alnum chars + underscores for simplicity sake)
+#### keep the first word of every line (where word is defined by alphanumeric chars + underscores for simplicity sake)
 `sed -E 's_[a-zA-Z0-9_]+.*_\1_' file.txt `
 
 
@@ -236,5 +236,5 @@ https://www.grymoire.com/Unix/Sed.html<br>
 <sub>**NOTES**</sub><br>
 <sub> * This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. I'm not a sed guru after all, just someone trying to follow the 20/80 formula (even though sometimes I go waaay overboard). </sub><br>
 <sub> * There is no mention of the hold space (and other registers) usage. Personally I found their usage quite confusing. If this might change in the future I'll adjust this. After all, this is not "The ultimate sed reference" but "useful sed". </sub><br>
-<sub> * There might be examples where I use -E (regexp extended option) when it is not necesarilly needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necesarry (as it hides some verbosity which makes the commands clearer).</sub><br>
+<sub> * There might be examples where I use -E (regexp extended option) when it is not necessarily needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necessary (as it hides some verbosity which makes the commands clearer).</sub><br>
 
