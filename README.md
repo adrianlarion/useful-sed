@@ -1,7 +1,7 @@
 # Useful sed
 
 #### This is awkward but ...
-* I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation. 
+* I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation.:pray:
 * [paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) |  [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) | bitcoin (1NrkpsgbmmLDoDcvAvsGEMGEQhvvtw36x1) - **are some ways to help me help you better.**
 Thank you! May you be rich as Crassus and happy as Buddha! :) 
 
