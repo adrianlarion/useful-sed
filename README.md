@@ -1,7 +1,7 @@
 # Useful sed
 
 #### This is awkward but ...
-* I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation. 
+* I love teaching others. Time is limited but donations will allow me to help the community more. **How useful was this to you?** If it was, I would be humbly grateful for your donation. 
 * [paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) |  [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) | bitcoin (1NrkpsgbmmLDoDcvAvsGEMGEQhvvtw36x1) - **are some ways to help me help you better.**
 Thank you! May you be rich as Crassus and happy as Buddha! :) 
 
@@ -12,24 +12,24 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 <sub>**NOTES**</sub><br>
 <sub> * This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. I'm not a sed guru after all, just someone trying to follow the 20/80 formula (even though sometimes I go waaay overboard). </sub><br>
 <sub> * There is no mention of the hold space (and other registers) usage. Personally I found their usage quite confusing. If this might change in the future I'll adjust this. After all, this is not "The ultimate sed reference" but "useful sed". </sub><br>
-<sub> * There might be examples where I use -E (regexp extended option) when it is not necesarilly needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necesarry (as it hides some verbosity which makes the commands clearer).</sub><br>
+<sub> * There might be examples where I use -E (regexp extended option) when it is not necessarily needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necesarry (as it hides some verbosity which makes the commands clearer).</sub><br>
 
 
 -----
 
 
-#### print one line
+#### Print one line
 `sed -n '10p' myfile.txt` 
 
-#### do replacement on all lines except line 5
+#### Do replacement on all lines except line 5
 `sed '5!/s/foo/bar/' file.txt`
 
-#### do replacement on lines matching regex (eg: lines starting with 'hello')
+#### Do replacement on lines matching regex (eg: lines starting with 'hello')
 `sed '/^hello/ s/h/H/' file.txt ` 
 
 
 
-#### do replacement from line 5 to end of file
+#### Do replacement from line 5 to end of file
 `sed '5,$ s/foo/bar/' file.txt `
 
 #### Print lines between two regexes
@@ -38,31 +38,31 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 #### Use custom delimiters to make it easy for some strings that contain slashes
 `sed 's_/bin/bash_/bin/sh_' file.txt ` 
 
-#### Custom delimiters for regex adress combined with the classical delimiter for substitute command (you could also use there a custom delimiter). Useful for paths.
+#### Custom delimiters for regex address combined with the classical delimiter for substitute command (you could also use there a custom delimiter). Useful for paths.
 `sed '\_/bin/bash_s/grep/egrep/' file.txt`
 * or using the same delimiter for clarity `sed '\_/bin/bash_s_grep_egrep_' file.txt`
 
 #### Insert a space between lowercase/Uppercase characters using & (which represents the regex match)
 `sed 's/[a-zA-Z]/& /g' file.txt `
 
-#### keep the first word of every line (where word is defined by alnum chars + underscores for simplicity sake)
+#### Keep the first word of every line (where word is defined by alnum chars + underscores for simplicity sake)
 `sed -E s_[a-zA-Z0-9_]+.*_\1_' file.txt `
 
 
-#### switch the first two words 
+#### Switch the first two words 
 `sed -E 's_([a-zA-Z0-9_]*) ([a-zA-Z0-9_]*)_\2 \1_' f1`
 
 
-#### remove duplicate words separated by a single space (but not triplicate)
+#### Remove duplicate words separated by a single space (but not triplicate)
 `sed -E 's_([a-zA-Z0-9_]+) \1_\1_ig' f1`
 
-#### search and replace for pattern, write just the lines with the replacements in a new file
+#### Search and replace for pattern, write just the lines with the replacements in a new file
 `sed  's_foo_bar_w replaced.txt' file.txt  `
 
-#### multiple replacements
+#### Multiple replacements
 `sed -e 's_foo_bar_' -e 's_hello_HELLO_' file.txt `
 
-#### multiple replacements by using a sed script
+#### Multiple replacements by using a sed script
 ```
 #!/usr/bin/sed -f
 s/a/A/
@@ -76,22 +76,22 @@ s/hello/HELLO/
 `sed '10p;5i\"INSERTED BEFORE LINE 5" file.txt ` 
 
 
-#### remove comments between lines starting with these two keywords. Empty lines will be put there instead
+#### Remove comments between lines starting with these two keywords. Empty lines will be put there instead
 `sed -E '/start/,/end/ s/#.*//' file.txt `
 
 #### Delete comments starting with # (no empty lines left behind)
 `sed -E '/^#/d' f1`
 
-#### view lines minus lines between line starting with pattern and end of file 
+#### View lines minus lines between line starting with pattern and end of file 
 `sed  '/start/,$ d' file.txt `
 
-#### view lines except lines between line starting with pattern and line ending with pattern
+#### View lines except lines between line starting with pattern and line ending with pattern
 `sed -rn '/start/,/end/ !p' file.txt `
 
-#### print until you encounter pattern then quit
+#### Print until you encounter pattern then quit
 `sed  '/start/q' file.txt `
 
-#### insert contents of file after a certain line
+#### Insert contents of file after a certain line
 `sed  '5 r newfile.txt' file.txt `
 
 #### Append text after lines containing regex (AFTER FOO)
@@ -100,7 +100,7 @@ s/hello/HELLO/
 #### Insert text after lines containing regex (BEFORE FOO)
 `sed '/foo/i\BEFORE FOO' file.txt `
 
-#### change line containing regex match
+#### Change line containing regex match
 `sed '/foo/c\FOO IS CHANGED' file.txt `
 
 #### Nested sed ranges with inversion. Between lines 1,100 apply actions where the pattern DOESN'T match.
