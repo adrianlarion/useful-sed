@@ -80,7 +80,7 @@ s/hello/HELLO/
 `sed -E '/start/,/end/ s/#.*//' file.txt `
 
 #### Delete comments starting with # (no empty lines left behind)
-sed -E '/^#/d' f1
+`sed -E '/^#/d' f1`
 
 #### view lines minus lines between line starting with pattern and end of file 
 `sed  '/start/,$ d' file.txt `
