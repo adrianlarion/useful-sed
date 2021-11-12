@@ -7,14 +7,6 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 
 
 
-
-
-<sub>**NOTES**</sub><br>
-<sub> * This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. I'm not a sed guru after all, just someone trying to follow the 20/80 formula (even though sometimes I go waaay overboard). </sub><br>
-<sub> * There is no mention of the hold space (and other registers) usage. Personally I found their usage quite confusing. If this might change in the future I'll adjust this. After all, this is not "The ultimate sed reference" but "useful sed". </sub><br>
-<sub> * There might be examples where I use -E (regexp extended option) when it is not necesarilly needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necesarry (as it hides some verbosity which makes the commands clearer).</sub><br>
-
-
 -----
 
 
@@ -148,8 +140,21 @@ q
 `sed -E '/^#/w comments.txt' file.txt `
 
 #### Print every second line (substitute ~3 for third line, etc)
-`sed '1~2p' file.txt `
+`sed -n '1~2p' file.txt `
 
 #### Edit file in place but also create a backup
 `sed -i.bak 's/hello/HELLO/' file.txt `
+
+------
+#### Credits & links
+* I've learned sed from the manual and various internet links. Here are some of them:<br>
+http://sed.sourceforge.net/sed1line.txt<br>
+https://www.grymoire.com/Unix/Sed.html<br>
+`info sed` and `man sed`<br>
+
+
+<sub>**NOTES**</sub><br>
+<sub> * This is not absolutely perfect and up to the highest standards of Posix and sed usage. It was kindly pointed to me by people from HN. I'll try and make this the best possible version I can and I'll listen to your feedback. I'm not a sed guru after all, just someone trying to follow the 20/80 formula (even though sometimes I go waaay overboard). </sub><br>
+<sub> * There is no mention of the hold space (and other registers) usage. Personally I found their usage quite confusing. If this might change in the future I'll adjust this. After all, this is not "The ultimate sed reference" but "useful sed". </sub><br>
+<sub> * There might be examples where I use -E (regexp extended option) when it is not necesarilly needed. Chances are you'll want to use this in most of your operations so it might not be a bad reflex to have. Sure, you could make an alias for it in your .bashrc. Personally I try and delay usage of aliases until I feel it's absolutely necesarry (as it hides some verbosity which makes the commands clearer).</sub><br>
 
