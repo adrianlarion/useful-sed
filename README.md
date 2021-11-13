@@ -26,7 +26,7 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 `sed -n '10p' myfile.txt` 
 
 #### Do replacement on all lines except line 5
-`sed '5!/s/foo/bar/' file.txt`
+`sed '5! s/foo/bar/' file.txt`
 
 #### Do replacement on lines matching regex (eg: lines starting with 'hello')
 `sed '/^hello/ s/h/H/' file.txt ` 
