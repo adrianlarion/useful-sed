@@ -17,7 +17,9 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 
 # Recommended books (not written by me)
 [Definitive Guide to sed - by Daniel Goldman](https://amzn.to/2YJETKI)
+<br>
 [Sed & Awk - Dale Dougherty & Arnold Robbins](https://amzn.to/3nd0BjE)
+<br>
 [Effective awk programming - by Arnold Robbins](https://amzn.to/30xk6Lf)
 
 # More guides that I wrote
