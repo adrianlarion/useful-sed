@@ -16,9 +16,9 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 [CREDITS](#credits-and-links)
 
 # MORE LIKE THIS:
-[simple-awk](https://github.com/adrianscheff/simple-awk)
+[simple-awk](https://github.com/adrianscheff/simple-awk) - A simple but practical guide to awk.
 <br>
-[wizardly-tips-vim](https://github.com/adrianscheff/wizardly-tips-vim)
+[wizardly-tips-vim](https://github.com/adrianscheff/wizardly-tips-vim) - less known Vim tips & tricks
 
 -----
 
