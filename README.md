@@ -11,7 +11,7 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 
 [SHORT SED TUT](#short-sed-tut) :books:
 
-[BUY ME A COFFEE ?](#buy-me-a-coffee) :pray:
+[MAKE A DONATION!](#buy-me-a-coffee) :pray:
 
 [CREDITS](#credits-and-links)
 
