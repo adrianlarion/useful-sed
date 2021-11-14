@@ -8,7 +8,7 @@ Useful sed tips, techniques and tricks for daily usage.
 
 * [Short sed tut](#short-sed-tut) :books:
 
-* [About] (#about)
+* [About](#about)
 
 * [Please consider donating to support this type of content!](#buy-me-a-coffee) :pray:
 
