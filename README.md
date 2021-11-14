@@ -1,15 +1,14 @@
 # Useful sed
 
+Useful sed tips, techniques and tricks for daily usage.
 
-This was born in 4-5 hours of recapping sed (and many hours learning it in the first place). Since then I've spent some more hours (and counting) fixing & improving. A good way to learn something well is to also explain to others. And if I'm honest this is also for myself, later, when I forget. :) 
-
-
-It was Number 1 on Hacker News in hours after publication and 300+ stars on Github. Hours. Damn! All other projects combined (some of which took much more time) are in the double digit range. The low range. And this quick and  dirty sed tips collection took off. I consider myself lucky to have experienced this and I'm grateful to the people who made it possible. For you I'll try and make this as good as I can. 
 
 
 * [One liners with short explanation](#one-liners-with-short-explanation) :bulb:
 
 * [Short sed tut](#short-sed-tut) :books:
+
+* [About] (#about)
 
 * [Please consider donating to support this type of content!](#buy-me-a-coffee) :pray:
 
@@ -287,6 +286,14 @@ q
 [TO BE CONTINUED]
 
 ------
+
+# About
+
+This was born in 4-5 hours of recapping sed (and many hours learning it in the first place). Since then I've spent some more hours (and counting) fixing & improving. A good way to learn something well is to also explain to others. And if I'm honest this is also for myself, later, when I forget. :) 
+
+
+It was Number 1 on Hacker News in hours after publication and 300+ stars on Github. Hours. Damn! All other projects combined (some of which took much more time) are in the double digit range. The low range. And this quick and  dirty sed tips collection took off. I consider myself lucky to have experienced this and I'm grateful to the people who made it possible. For you I'll try and make this as good as I can. 
+
 
 # BUY ME A COFFEE
 I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation.:pray:
