@@ -7,13 +7,13 @@ This was born in 4-5 hours of recapping sed (and many hours learning it in the f
 It was Number 1 on Hacker News in hours after publication and 300+ stars on Github. Hours. Damn! All other projects combined (some of which took much more time) are in the double digit range. The low range. And this quick and  dirty sed tips collection took of. I consider myself lucky to have experienced this and I'm grateful to the people who made it possible. For you I'll try and make this as good as I can. 
 
 
-[One liners with short explanation](#one-liners-with-short-explanation) :bulb:
+* [One liners with short explanation](#one-liners-with-short-explanation) :bulb:
 
-[Short sed tut](#short-sed-tut) :books:
+* [Short sed tut](#short-sed-tut) :books:
 
-[Please consider donating to support this type of content!](#buy-me-a-coffee) :pray:
+* [Please consider donating to support this type of content!](#buy-me-a-coffee) :pray:
 
-[Credits](#credits-and-links)
+* [Credits](#credits-and-links)
 
 # MORE LIKE THIS:
 [simple-awk](https://github.com/adrianscheff/simple-awk) - A simple but practical guide to awk.
