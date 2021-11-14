@@ -15,7 +15,12 @@ It was Number 1 on Hacker News in hours after publication and 300+ stars on Gith
 
 * [Credits](#credits-and-links)
 
-# MORE LIKE THIS:
+# Recommended books (not written by me)
+[Definitive Guide to sed - by Daniel Goldman](https://amzn.to/2YJETKI)
+[Sed & Awk - Dale Dougherty & Arnold Robbins] (https://amzn.to/3nd0BjE)
+[Effective awk programming - by Arnold Robbins] (https://amzn.to/30xk6Lf)
+
+# More guides that I wrote
 [simple-awk](https://github.com/adrianscheff/simple-awk) - A simple but practical guide to awk.
 <br>
 [wizardly-tips-vim](https://github.com/adrianscheff/wizardly-tips-vim) - Less known Vim tips & tricks
