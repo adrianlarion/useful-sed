@@ -25,6 +25,8 @@ Useful sed tips, techniques and tricks for daily usage.
 [simple-awk](https://github.com/adrianscheff/simple-awk) - A simple but practical guide to awk.
 <br>
 [wizardly-tips-vim](https://github.com/adrianscheff/wizardly-tips-vim) - Less known Vim tips & tricks
+<br>
+[quick-grep](https://github.com/adrianscheff/quick-grep) - Quick grep reference and tutorial.
 
 -----
 
