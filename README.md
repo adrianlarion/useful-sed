@@ -2,7 +2,7 @@
 
 Useful sed tips, techniques and tricks for daily usage.
 
-
+# TABLE OF CONTENTS
 
 * [One liners with short explanation](#one-liners-with-short-explanation) :bulb:
 
