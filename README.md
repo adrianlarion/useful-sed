@@ -22,6 +22,8 @@ Useful sed tips, techniques and tricks for daily usage.
 [Effective awk programming - by Arnold Robbins](https://amzn.to/30xk6Lf)
 
 # More guides that I wrote
+[text-processing-recipes-linux](https://github.com/adrianscheff/text-processing-recipes-linux) - Featuring `Featuring: vim, tr, cat, tac, sort, shuf, seq, pr, paste, fmt, cut, nl, split, csplit, sed, awk, grep and regex.`
+<br>
 [simple-awk](https://github.com/adrianscheff/simple-awk) - A simple but practical guide to awk.
 <br>
 [wizardly-tips-vim](https://github.com/adrianscheff/wizardly-tips-vim) - Less known Vim tips & tricks
