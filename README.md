@@ -22,7 +22,7 @@ Useful sed tips, techniques and tricks for daily usage.
 [Effective awk programming - by Arnold Robbins](https://amzn.to/30xk6Lf)
 
 # More guides that I wrote
-[text-processing-recipes-linux](https://github.com/adrianscheff/text-processing-recipes-linux) - Featuring `vim, tr, cat, tac, sort, shuf, seq, pr, paste, fmt, cut, nl, split, csplit, sed, awk, grep and regex.`
+[text-processing-recipes-linux](https://github.com/adrianscheff/text-processing-recipes-linux) - Comprehensive list of text processing tools and techniques. Featuring `vim, tr, cat, tac, sort, shuf, seq, pr, paste, fmt, cut, nl, split, csplit, sed, awk, grep and regex.`
 <br>
 [simple-awk](https://github.com/adrianscheff/simple-awk) - A simple but practical guide to awk.
 <br>
