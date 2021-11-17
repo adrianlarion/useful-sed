@@ -15,11 +15,11 @@ Useful sed tips, techniques and tricks for daily usage.
 * [Credits](#credits-and-links)
 
 # Recommended books (not written by me)
-[Definitive Guide to sed - by Daniel Goldman](https://amzn.to/2YJETKI)
+[Definitive Guide to sed - by Daniel Goldman](https://amzn.to/3cnzQCS)
 <br>
-[Sed & Awk - Dale Dougherty & Arnold Robbins](https://amzn.to/3nd0BjE)
+[Sed & Awk - Dale Dougherty & Arnold Robbins](https://amzn.to/3kKck7Y)
 <br>
-[Effective awk programming - by Arnold Robbins](https://amzn.to/30xk6Lf)
+[Effective awk programming - by Arnold Robbins](https://amzn.to/30scfhM)
 
 # More guides that I wrote
 [text-processing-recipes-linux](https://github.com/adrianscheff/text-processing-recipes-linux) - Comprehensive list of text processing tools and techniques. Featuring `vim, tr, cat, tac, sort, shuf, seq, pr, paste, fmt, cut, nl, split, csplit, sed, awk, grep and regex.`
