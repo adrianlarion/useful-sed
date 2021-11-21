@@ -30,6 +30,15 @@ Useful sed tips, techniques and tricks for daily usage.
 <br>
 [quick-grep](https://github.com/adrianscheff/quick-grep) - Quick grep reference and tutorial.
 
+# BUY ME A COFFEE
+I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation.:pray:
+
+
+[paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) |  [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) | bitcoin (1NrkpsgbmmLDoDcvAvsGEMGEQhvvtw36x1) - **are some ways to help me help you better.**
+
+
+Thank you! May you be rich as Crassus and happy as Buddha! :) 
+
 -----
 
 
@@ -299,15 +308,6 @@ This was born in 4-5 hours of recapping sed (and many hours learning it in the f
 It was Number 1 on Hacker News in hours after publication and 300+ stars on Github. Hours. Damn! All other projects combined (some of which took much more time) are in the double digit range. The low range. And this quick and  dirty sed tips collection took off. I consider myself lucky to have experienced this and I'm grateful to the people who made it possible. For you I'll try and make this as good as I can. 
 
 
-# BUY ME A COFFEE
-I love teaching others. Time is limited but donations will allow me to to help the community more. **How useful was this to you?** If it was I would be humbly grateful for your donation.:pray:
-
-
-[paypal.me/adrianscheff](https://www.paypal.com/paypalme/adrianscheff) |  [patreon.com/adrianscheff](https://www.patreon.com/adrianscheff) | bitcoin (1NrkpsgbmmLDoDcvAvsGEMGEQhvvtw36x1) - **are some ways to help me help you better.**
-
-
-
-Thank you! May you be rich as Crassus and happy as Buddha! :) 
 
 
 
