@@ -61,7 +61,7 @@ Thank you! May you be rich as Crassus and happy as Buddha! :)
 `sed '5,$ s/foo/bar/' file.txt `
 
 
-#### Delete empty files
+#### Delete empty lines
 `sed  '/^$/d' file`
 
 
